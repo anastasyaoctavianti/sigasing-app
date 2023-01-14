@@ -7,7 +7,7 @@ class Database
     private $password;
     public $conn;
     
-    fuction __construct()
+    function __construct()
     {
         $this->host      = 'localhost';
         $this->$username = 'root';
