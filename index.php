@@ -10,7 +10,7 @@
       <div class="content-wrapper">
        <?php include "routes.php" ?>
       </div>
-      <?php include "partials/controls.php" ?>
+      <?php include "partials/control.php" ?>
       <?php include "partials/footer.php" ?>
     </div>
 </body>
