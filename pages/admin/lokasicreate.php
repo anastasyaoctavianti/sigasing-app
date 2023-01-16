@@ -98,4 +98,4 @@ if (isset($_POST['button_create'])) {
     </div>
 </section>
 
-<?php include_once "partials/script.php" ?>
+<?php include_once "partials/scripts.php" ?>
