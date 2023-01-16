@@ -111,6 +111,7 @@ if (isset($_GET['id'])) {
     </div>
 </section>
 
+
 <?php
 } else {
     echo "<meta http-equiv='refresh' content='0;url=?page=lokasiread'>";
