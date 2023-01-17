@@ -1,4 +1,4 @@
-<!-- Lokasi Create -->
+<!-- Jabatan Create -->
 
 <?php include_once "partials/cssdatatables.php" ?>
 

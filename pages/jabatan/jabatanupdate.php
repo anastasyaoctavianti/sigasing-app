@@ -1,4 +1,4 @@
-<!-- Lokasi Update -->
+<!-- Jabatan Update -->
 
 <?php
 if (isset($_GET['id'])) {

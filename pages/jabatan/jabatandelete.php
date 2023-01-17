@@ -1,4 +1,4 @@
-<!-- Lokasi Delete -->
+<!-- Jabatan Delete -->
 
 <?php
 if (isset($_GET['id'])) {
