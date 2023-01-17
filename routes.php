@@ -19,16 +19,16 @@ if (isset($_GET['page'])) {
             file_exists('pages/admin/lokasidelete.php') ? include 'pages/admin/lokasidelete.php' : include "pages/404.php";
             break;
         case'jabatanread':
-            file_exists('pages/admin/jabatanread.php') ? include 'pages/admin/jabatanread.php' : include "pages/404.php";
+            file_exists('pages/jabatan/jabatanread.php') ? include 'pages/jabatan/jabatanread.php' : include "pages/404.php";
             break;
         case'jabatancreate':
-            file_exists('pages/admin/jabatancreate.php') ? include 'pages/admin/jabatancreate.php' : include "pages/404.php";
+            file_exists('pages/jabatan/jabatancreate.php') ? include 'pages/jabatan/jabatancreate.php' : include "pages/404.php";
             break;
         case'jabatanupdate':
-            file_exists('pages/admin/jabatanupdate.php') ? include 'pages/admin/jabatanupdate.php' : include "pages/404.php";
+            file_exists('pages/jabatan/jabatanupdate.php') ? include 'pages/jabatan/jabatanupdate.php' : include "pages/404.php";
             break;
         case'jabatandelete':
-            file_exists('pages/admin/jabatandelete.php') ? include 'pages/admin/jabatandelete.php' : include "pages/404.php";
+            file_exists('pages/jabatan/jabatandelete.php') ? include 'pages/jabatan/jabatandelete.php' : include "pages/404.php";
             break;
         case'bagianread':
             file_exists('pages/admin/bagianread.php') ? include 'pages/admin/bagianread.php' : include "pages/404.php";
