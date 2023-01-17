@@ -7,7 +7,7 @@ if (isset($_GET['id'])) {
     $db = $database->getConnection();
 
     $id = $_GET['id'];
-    $findSql = "SELECT * FROM lokasi WHERE id = ?";
+    $findSql = "SELECT * FROM jabatan WHERE id = ?";
     $stmt = $db->prepare($findSql);
     $stmt->bindParam(1, $_GET['id']);
     $stmt->execute();
@@ -20,8 +20,11 @@ if (isset($_GET['id'])) {
         
             $validateSql = "SELECT * FROM jabatan WHERE nama_jabatan = ? AND id != ?";
             $stmt = $db->prepare($validateSql);
-            $stmt->bindParam(1, $_POST['nama_lokasi']);
-            $stmt->bindParam(2, $_POST['id']);
+            $stmt->bindParam(1, $_POST['id']);
+            $stmt->bindParam(2, $_POST['nama_jabatan']);
+            $stmt->bindParam(3, $_POST['gapok']);
+            $stmt->bindParam(4, $_POST['tunjangan']);
+            $stmt->bindParam(5, $_POST['uang_makan']);
             $stmt->execute();
             if ($stmt->rowCount() > 0) {
 ?>
@@ -32,10 +35,13 @@ if (isset($_GET['id'])) {
             </div>
     <?php    
             } else {
-                $updateSql = "UPDATE lokasi SET nama_lokasi = ? WHERE id = ?";
+                $updateSql = "UPDATE lokasi SET nama_jabatan = ? WHERE id = ?";
                 $stmt = $db->prepare($updateSql);
-                $stmt->bindParam(1, $_POST['nama_lokasi']);
-                $stmt->bindParam(2, $_POST['id']);
+                $stmt->bindParam(1, $_POST['id']);
+                $stmt->bindParam(2, $_POST['nama_jabatan']);
+                $stmt->bindParam(3, $_POST['gapok']);
+                $stmt->bindParam(4, $_POST['tunjangan']);
+                $stmt->bindParam(5, $_POST['uang_makan']);
                 if ($stmt->execute()) {
                     $_SESSION['hasil'] = true;
                     $_SESSION['pesan'] = "Berhasil simpan data";
@@ -76,12 +82,12 @@ if (isset($_GET['id'])) {
         ?>
         <div class="row mb2">
             <div class="col-sm-6">
-                <h1>Ubah Data Lokasi</h1>
+                <h1>Ubah Data Jabatan</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="?page=home">Home</a></li>
-                    <li class="breadcrumb-item"><a href="?page=lokasiread">Lokasi</a></li>
+                    <li class="breadcrumb-item"><a href="?page=lokasiread">Jabatan</a></li>
                     <li class="breadcrumb-item active">Ubah Data</li>
                 </ol>
             </div>
@@ -91,16 +97,33 @@ if (isset($_GET['id'])) {
 <section class="content">
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Ubah Lokasi</h3>
+            <h3 class="card-title">Ubah Jabatan</h3>
         </div>
         <div class="card-body">
             <form method="POST">
                 <input type="hidden" name="id" value="<?= $row['id'] ?>">
                 <div class="form-group">
-                    <label for="nama_lokasi">Nama Lokasi</label>
-                    <input type="text" class="form-control" name="nama_lokasi" value="<?= $row['nama_lokasi'] ?>">
+                    <label for="nama_jabatan">Nama Jabatan</label>
+                    <input type="text" class="form-control" name="nama_jabatan" value="<?= $row['nama_jabatan'] ?>">
                 </div>
-                <a href="?page=lokasiread" class="btn btn-danger btn-sm float-right">
+                <div class="form-group">
+                    <label for="gapok_jabatan">Gaji Pokok</label>
+                    <input type="number" class="form-control" name="gapok_jabatan"
+                        onkeypress='return (even,charCode > 47 && event,charCode < 58) || event.charCode == 46'
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="tunjangan_jabatan">Tunjangan</label>
+                    <input type="number" class="form-control" name="tunjangan_jabatan"
+                        onkeypress='return (even,charCode > 47 && event,charCode < 58) || event.charCode == 46'
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="uang_makan_perhari">Uang Makan Perhari</label>
+                    <input type="number" class="form-control" name="uang_makan_perhari"
+                        onkeypress='return (even,charCode > 47 && event,charCode < 58) || event.charCode == 46'
+                        >
+                <a href="?page=jabatanread" class="btn btn-danger btn-sm float-right">
                     <i class="fa fa-times"></i> Batal
                 </a>
                 <button type="submit" name="button_update" class="btn btn-success btn-sm float-right">
@@ -114,6 +137,6 @@ if (isset($_GET['id'])) {
 
 <?php
 } else {
-    echo "<meta http-equiv='refresh' content='0;url=?page=lokasiread'>";
+    echo "<meta http-equiv='refresh' content='0;url=?page=jabatanread'>";
 }
 ?>
