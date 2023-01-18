@@ -31,16 +31,16 @@ if (isset($_GET['page'])) {
             file_exists('pages/jabatan/jabatandelete.php') ? include 'pages/jabatan/jabatandelete.php' : include "pages/404.php";
             break;
         case'bagianread':
-            file_exists('pages/admin/bagianread.php') ? include 'pages/admin/bagianread.php' : include "pages/404.php";
+            file_exists('pages/bagian/bagianread.php') ? include 'pages/bagian/bagianread.php' : include "pages/404.php";
             break;
         case'bagiancreate':
-            file_exists('pages/admin/bagiancreate.php') ? include 'pages/admin/bagiancreate.php' : include "pages/404.php";
+            file_exists('pages/bagian/bagiancreate.php') ? include 'pages/bagian/bagiancreate.php' : include "pages/404.php";
             break;
         case'bagianupdate':
-            file_exists('pages/admin/bagianupdate.php') ? include 'pages/admin/bagianupdate.php' : include "pages/404.php";
+            file_exists('pages/bagian/bagianupdate.php') ? include 'pages/bagian/bagianupdate.php' : include "pages/404.php";
             break;
         case'bagiandelete':
-            file_exists('pages/admin/bagiandelete.php') ? include 'pages/admin/bagiandelete.php' : include "pages/404.php";
+            file_exists('pages/bagian/bagiandelete.php') ? include 'pages/bagian/bagiandelete.php' : include "pages/404.php";
             break;
             case 'karyawanread':
                 file_exists('pages/admin/karyawanread.php') ? include 'pages/admin/karyawanread.php' : include "pages/404.php";
