@@ -17,7 +17,7 @@ if (isset($_GET['id'])) {
         $_SESSION['hasil'] = false;
         $_SESSION['pesan'] = "Gagal simpan data";
     }
-    echo "<meta http-equiv='refresh' content='0;url=?page=lokasiread'>";
+    echo "<meta http-equiv='refresh' content='0;url=?page=jabatanread'>";
 }
 ?>
 

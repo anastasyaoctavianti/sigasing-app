@@ -65,7 +65,7 @@
                         <td><?= $row['nama_jabatan'] ?></td>
                         <td style="text-align: right"><?php echo number_format($row['gapok_jabatan']) ?></td>
                         <td style="text-align: right"><?php echo number_format($row['tunjangan_jabatan']) ?></td>
-                        <td style="text-align: right"><?php echo number_format($row['gapok_jabatan']) ?></td>
+                        <td style="text-align: right"><?php echo number_format($row['uang_makan_perhari']) ?></td>
                         <td>
                             <form action method=" POST">
                             <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
