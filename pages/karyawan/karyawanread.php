@@ -4,14 +4,14 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Jabatan</h1>
+                <h1 class="m-0">Karyawan</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item">
                         <a href="?page=home">Home</a>
                     </li>
-                    <li class="breadcrumb-item">Jabatan</li>
+                    <li class="breadcrumb-item">Karyawan</li>
                 </ol>
             </div>
         </div>
@@ -21,8 +21,8 @@
 <div class="content">
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Data Jabatan</h3>
-            <a href="?page=jabatancreate" class="btn btn-success btn-sm float-right">
+            <h3 class="card-title">Data Karyawan</h3>
+            <a href="?page=karyawancreate" class="btn btn-success btn-sm float-right">
                 <i class="fa fa-plus-circle"></i> Tambah Data
             </a>
         </div>
@@ -31,20 +31,14 @@
                 <thead>
                     <tr>
                         <th>No</th>
-                        <th>Nama Jabatan</th>
-                        <th>Gapok</th>
-                        <th>Tunjangan</th>
-                        <th>Uang Makan</th>
+                        <th>Nama Karyawan</th>
                         <th>Opsi</th>
                     </tr>
                 </thead>
                 <tfoot>
-                        <th>No</th>
-                        <th>Nama Jabatan</th>
-                        <th>Gapok</th>
-                        <th>Tunjangan</th>
-                        <th>Uang Makan</th>
-                        <th>Opsi</th>
+                    <th>No</th>
+                    <th>Nama karyawan</th>
+                    <th>Opsi</th>
                 </tfoot>                
                 <tbody>
                     <?php
@@ -52,7 +46,7 @@
                         $database = new Database();
                         $db = $database->getConnection();
 
-                        $selectSql = "SELECT * FROM jabatan";
+                        $selectSql = "SELECT * FROM karyawan";
 
                         $stmt = $db->prepare($selectSql);
                         $stmt->execute();
@@ -62,17 +56,12 @@
                     ?>
                     <tr>
                         <td><?= $no++ ?></td>
-                        <td><?= $row['nama_jabatan'] ?></td>
-                        <td style="text-align: right"><?php echo number_format($row['gapok_jabatan']) ?></td>
-                        <td style="text-align: right"><?php echo number_format($row['tunjangan_jabatan']) ?></td>
-                        <td style="text-align: right"><?php echo number_format($row['gapok_jabatan']) ?></td>
+                        <td><?= $row['nama_lengkap'] ?></td>
                         <td>
-                            <form action method=" POST">
-                            <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
-                            <a href="?page=jabatanupdate&id=<?= $row['id'] ?>" class="btn btn-primary btn-sm mr-1">
+                            <a href="?page=karyawanupdate&id=<?= $row['id'] ?>" class="btn btn-primary btn-sm mr-1">
                                 <i class="fa fa-edit"></i> Ubah
                             </a>
-                            <a href="?page=jabatandelete&id=<?= $row['id'] ?>" class="btn btn-danger btn-sm mr-1" onclick="javascript: return confirm('Konfirmasi data akan dihapus?);">
+                            <a href="?page=karyawandlete&id=<?= $row['id'] ?>" class="btn btn-danger btn-sm mr-1" onclick="javascript: return confirm('Konfirmasi data akan dihapus?);">
                                 <i class="fa fa-trash"></i> Hapus
                             </a>
                         </td>
