@@ -77,8 +77,8 @@
                     $db = $database->getConnection();
 
                     $selectSql = "SELECT B.*, K.nama_lengkap nama_kepala_bagian, L.nama_lokasi nama_lokasi_bagian FROM bagian B
-LEFT JOIN karyawan K ON B.karyawan_id = K.id
-LEFT JOIN lokasi L ON B.lokasi_id = L.id";
+                    LEFT JOIN karyawan K ON B.karyawan_id = K.id
+                    LEFT JOIN lokasi L ON B.lokasi_id = L.id";
 
                     $stmt = $db->prepare($selectSql);
                     $stmt->execute();
