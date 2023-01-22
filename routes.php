@@ -46,7 +46,7 @@ if (isset($_GET['page'])) {
                 file_exists('pages/karyawan/karyawanread.php') ? include 'pages/karyawan/karyawanread.php' : include "pages/404.php";
                 break;
             case 'karyawancreate':
-                file_exists('pages/admin/karyawancreate.php') ? include 'pages/admin/karyawancreate.php' : include "pages/404.php";
+                file_exists('pages/karyawan/karyawancreate.php') ? include 'pages/karyawan/karyawancreate.php' : include "pages/404.php";
                 break;
             case 'karyawanbagian':
                 file_exists('pages/karyawan/karyawanbagian.php') ? include 'pages/karyawan/karyawanbagian.php' : include "pages/404.php";
@@ -65,4 +65,4 @@ if (isset($_GET['page'])) {
     }
 } else {
     include "pages/home.php";
-}
+}                                                                    

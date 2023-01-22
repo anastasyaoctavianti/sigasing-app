@@ -1,4 +1,4 @@
-<!-- karyawan Delete -->
+<!-- Karyawan Delete -->
 
 <?php
 if (isset($_GET['id'])) {
@@ -7,7 +7,7 @@ if (isset($_GET['id'])) {
     $database = new Database();
     $db = $database->getConnection();
 
-    $deleteSql = "DELETE FROM jabatan WHERE id = ?";
+    $deleteSql = "DELETE FROM karyawan WHERE id = ?";
     $stmt = $db->prepare($deleteSql);
     $stmt->bindParam(1, $_GET['id']);
     if ($stmt->execute()) {

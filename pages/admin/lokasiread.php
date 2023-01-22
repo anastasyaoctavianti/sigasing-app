@@ -1,3 +1,4 @@
+<!-- Lokasi Read -->
 <?php include_once "partials/cssdatatables.php" ?>
 
 <div class="content-header">

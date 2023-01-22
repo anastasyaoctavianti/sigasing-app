@@ -12,12 +12,11 @@ if (isset($_GET['id'])) {
     $stmt->bindParam(1, $_GET['id']);
     if ($stmt->execute()) {
         $_SESSION['hasil'] = true;
-        $_SESSION['pesan'] = "Berhasil simpan data";
+        $_SESSION['pesan'] = "Berhasil hapus data";
     } else {
         $_SESSION['hasil'] = false;
-        $_SESSION['pesan'] = "Gagal simpan data";
+        $_SESSION['pesan'] = "Gagal hapus data";
     }
     echo "<meta http-equiv='refresh' content='0;url=?page=jabatanread'>";
 }
 ?>
-

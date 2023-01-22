@@ -1,4 +1,4 @@
-<!-- Bagian Delete -->
+<!-- Karyawan Delete -->
 
 <?php
 if (isset($_GET['id'])) {
